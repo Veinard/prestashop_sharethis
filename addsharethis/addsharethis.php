@@ -133,9 +133,20 @@ public function hookExtraRight($params)
 		global $smarty, $cookie;
 		
 		$conf_row = Configuration::get('CONF_ROW');
+		
+		if (version_compare(_PS_VERSION_,'1.5','<'))
+        {
+ 		$smarty->assign(array(
+				'conf_row' => $conf_row,
+		    ));
+		}
+	    else
+		{
 		$this->context->smarty->assign(array(
 				'conf_row' => $conf_row,
 		    ));
+		}
+	
 			
 		if (Configuration::get('ADDTHISSHARE_TWITTER') == 1)
 			$data['twitter'] = '<span class="st_twitter_hcount sharebtn" displayText="Tweet"></span>';
@@ -189,9 +200,18 @@ public function hookExtraRight($params)
 	{
 		global $smarty, $cookie;
 		$conf_row = Configuration::get('CONF_ROW');
+		if (version_compare(_PS_VERSION_,'1.5','<'))
+        {
+ 		$smarty->assign(array(
+				'conf_row' => $conf_row,
+		    ));
+		}
+	    else
+		{
 		$this->context->smarty->assign(array(
 				'conf_row' => $conf_row,
-		    ));	
+		    ));
+		}
 		if (Configuration::get('ADDTHISSHARE_TWITTER') == 1)
 			$data['twitter'] = '<span class="st_twitter_hcount sharebtn" displayText="Tweet"></span>';
 		if (Configuration::get('ADDTHISSHARE_GOOGLE') == 1)
