@@ -7,7 +7,6 @@ class AddShareThis extends Module
 	function __construct()
 	{
 		$this->name = 'addsharethis';
-		$this->tab = 'social_networks';
 		$this->author = 'Serega Sakun';
 		$this->tab = 'front_office_features';
 		$this->need_instance = 0;
