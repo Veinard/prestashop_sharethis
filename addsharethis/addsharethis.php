@@ -9,6 +9,7 @@ class AddShareThis extends Module
 		$this->name = 'addsharethis';
 		$this->author = 'Serega Sakun';
 		$this->tab = 'front_office_features';
+		$this->version = 1.0;
 		$this->need_instance = 0;
 		$this->_directory = dirname(__FILE__);
 		parent::__construct();	
@@ -60,7 +61,7 @@ public function getContent()
 	    }
 		$this->_html .= '
 		<fieldset class="space" id="cogField">
-			<legend><img src="'.$this->_path.'cog.png" alt="" title="" /> '.$this->l('Configuration').'</legend>
+			<legend>'.$this->l('Configuration').'</legend>
 			<form id="cogForm" name="cogForm" method="post" action="'.Tools::safeOutput($_SERVER['REQUEST_URI']).'">
 			<br/>
 			<em>'.$this->l('(Key in your account statistic http://sharethis.com)').'</em>
